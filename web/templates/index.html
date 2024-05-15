@@ -22,99 +22,150 @@
         <div class="col-md-6">
           <h2 class="text-center">Diabetes Prediction</h2>
           <form action="/predict" method="post">
-            <div class="mb-3">
-              <label for="pregnancies" class="form-label">Pregnancies:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="pregnancies"
-                name="pregnancies"
-                min="0"
-              />
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="pregnancies" class="form-label"
+                    >Pregnancies:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="pregnancies"
+                    name="pregnancies"
+                    min="0"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="glucose" class="form-label">Glucose:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="glucose"
+                    name="glucose"
+                    min="0"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="blood_pressure" class="form-label"
+                    >Blood Pressure:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="blood_pressure"
+                    name="blood_pressure"
+                    min="0"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="skin_thickness" class="form-label"
+                    >Skin Thickness:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="skin_thickness"
+                    name="skin_thickness"
+                    min="0"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="insulin" class="form-label">Insulin:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="insulin"
+                    name="insulin"
+                    min="0"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="bmi" class="form-label">BMI:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="bmi"
+                    name="bmi"
+                    min="0"
+                    step="0.0001"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="dpf" class="form-label"
+                    >Diabetes Pedigree Function:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="dpf"
+                    name="dpf"
+                    min="0"
+                    step="0.00001"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="age" class="form-label">Age:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="age"
+                    name="age"
+                    min="0"
+                  />
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="glucose" class="form-label">Glucose:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="glucose"
-                name="glucose"
-                min="0"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="blood_pressure" class="form-label"
-                >Blood Pressure:</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                id="blood_pressure"
-                name="blood_pressure"
-                min="0"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="skin_thickness" class="form-label"
-                >Skin Thickness:</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                id="skin_thickness"
-                name="skin_thickness"
-                min="0"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="insulin" class="form-label">Insulin:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="insulin"
-                name="insulin"
-                min="0"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="bmi" class="form-label">BMI:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="bmi"
-                name="bmi"
-                min="0"
-                step="0.0001"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="dpf" class="form-label"
-                >Diabetes Pedigree Function:</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                id="dpf"
-                name="dpf"
-                min="0"
-                step="0.00001"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="age" class="form-label">Age:</label>
-              <input
-                type="number"
-                class="form-control"
-                id="age"
-                name="age"
-                min="0"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary">Predict</button>
+            <!-- <button type="submit" class="btn btn-primary">Predict</button> -->
           </form>
-          {% if prediction_text %}
-          <h3 class="text-center">{{ prediction_text }}</h3>
-          {% endif %}
+          <!-- {% if prediction_text %} -->
+          <button
+            type="button"
+            class="btn btn-primary mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#predictionModal"
+          >
+            Show Prediction
+          </button>
+          <div
+            class="modal fade"
+            id="predictionModal"
+            tabindex="-1"
+            aria-labelledby="predictionModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="predictionModalLabel">
+                    Prediction
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  {% if prediction_text %}
+                  <h3 class="text-center">{{ prediction_text }}</h3>
+                  {% endif %}
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
