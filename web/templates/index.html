@@ -120,7 +120,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Predict</button>
           </form>
-         
+
           <div
             class="modal fade"
             id="predictionModal"
@@ -141,7 +141,12 @@
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body col">
+                  <img
+                    src="/web/templates/assets/sa 1.png"
+                    style="width: 50%"
+                    alt="png"
+                  />
                   {% if prediction_text %}
                   <h3 class="text-center">{{ prediction_text }}</h3>
                   {% endif %}
@@ -160,7 +165,9 @@
           </div>
           {% if prediction_text %}
           <script>
-            var myModal = new bootstrap.Modal(document.getElementById('predictionModal'));
+            var myModal = new bootstrap.Modal(
+              document.getElementById("predictionModal")
+            );
             myModal.show();
           </script>
           {% endif %}
