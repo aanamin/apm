@@ -15,10 +15,31 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      /* ---- particles.js container ---- */
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+
+      .full-height {
+        height: 100vh;
+      }
+    </style>
   </head>
   <body>
-    <div class="container mt-5">
-      <div class="row justify-content-center">
+    <div class="container-fluid full-height" style="position: relative">
+      <div id="particles-js"></div>
+      <div class="row justify-content-center align-items-center full-height">
         <div class="col-md-6">
           <h2 class="text-center">Diabetes Prediction</h2>
           <form action="/predict" method="post" id="predictionForm">
@@ -118,9 +139,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Predict</button>
-        </form>
+            <button type="submit" class="btn btn-primary">Predict</button>
+          </form>
 
           <div
             class="modal fade"
@@ -145,7 +165,7 @@
                 <div class="modal-body col">
                   <img
                     src="/web/templates/assets/sa1.png"
-                    style="width: 50%; display: block; margin: auto;"
+                    style="width: 50%; display: block; margin: auto"
                     alt="png"
                   />
                   {% if prediction_text %}
@@ -175,5 +195,8 @@
         </div>
       </div>
     </div>
+
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
