@@ -17,6 +17,14 @@
     ></script>
 
     <style>
+      body {
+        color: white;
+      }
+
+      .modal-content {
+        color: #04040c;
+      }
+
       /* ---- particles.js container ---- */
       #particles-js {
         position: fixed;
@@ -25,7 +33,7 @@
         z-index: -1;
         width: 100%;
         height: 100%;
-        background-color: #fff;
+        background: linear-gradient(#739afe, #375bb5, #04040c);
         background-size: cover;
         background-position: 50% 50%;
         background-repeat: no-repeat;
@@ -40,8 +48,9 @@
     <div class="container-fluid full-height" style="position: relative">
       <div id="particles-js"></div>
       <div class="row justify-content-center align-items-center full-height">
-        <div class="col-md-6">
+        <div class="col-md-6" style="margin-bottom: 16px">
           <h2 class="text-center">Diabetes Prediction</h2>
+          <p class="text-center">Penulisan koma dengan titik (Contoh: 8.0)</p>
           <form action="/predict" method="post" id="predictionForm">
             <div class="row">
               <div class="col-md-6">
