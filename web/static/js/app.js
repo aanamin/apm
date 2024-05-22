@@ -24,13 +24,13 @@ particlesJS(
         },
       },
       color: {
-        value: "#96D2FE",
+        value: "#FFFFFF",
       },
       shape: {
         type: "circle",
         stroke: {
           width: 0,
-          color: "#96D2FE",
+          color: "#FFFFFF",
         },
         polygon: {
           nb_sides: 5,
@@ -64,7 +64,7 @@ particlesJS(
       line_linked: {
         enable: true,
         distance: 150,
-        color: "#96D2FE",
+        color: "#FFFFFF",
         opacity: 0.4,
         width: 1,
       },
@@ -123,7 +123,7 @@ particlesJS(
     retina_detect: true,
     config_demo: {
       hide_card: false,
-      background_color: "#96D2FE",
+      background_color: "#FFFFFF",
       background_image: "",
       background_position: "50% 50%",
       background_repeat: "no-repeat",
